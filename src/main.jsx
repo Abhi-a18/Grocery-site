@@ -15,44 +15,40 @@ import ProtectedRoute from "./components/ProtectedRoute";
 import "./index.css";
 
 const router = createBrowserRouter([
-
-{
-path: "/",
-element: <Login />
-},
-
-{
-path: "/",
-element: ( <ProtectedRoute> <App /> </ProtectedRoute>
-),
-children: [
-
   {
-    path: "home",
-    element: <Home />
-  },
-
-  {
-    path: "cart",
-    element: <Cart />
-  },
-
-  {
-    path: "add-product",
-    element: <AddProduct />
-  },
-
-  {
-    path: "checkout",
-    element: <Checkout />
+    path: "/",
+    element: <App />,
+    children: [
+      {
+        index: true,
+        element: <Login />
+      },
+      {
+        path: "home",
+        element: <Home />
+      },
+      {
+        path: "cart",
+        element: <Cart />
+      },
+      {
+        path: "add-product",
+        element: <AddProduct />
+      },
+      {
+        path: "checkout",
+        element: <Checkout />
+      },
+      {
+        path: "*",
+        element: <h1>Page Not Found</h1>
+      }
+    ]
   }
-
-]
-
-
-}
-
 ]);
 
-ReactDOM.createRoot(document.getElementById("root")).render( <Provider store={store}> <RouterProvider router={router} /> </Provider>
+ReactDOM.createRoot(document.getElementById("root")).render(
+  <Provider store={store}>
+    <RouterProvider router={router} />
+  </Provider>
 );
