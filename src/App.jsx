@@ -1,3 +1,4 @@
+import React from "react";
 import Navbar from "./components/Navbar";
 import { Outlet, useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
@@ -9,8 +10,6 @@ function App() {
   const user = useSelector((state) => state.auth.user);
 
   const [searchItem, setSearchItem] = useState("");
-
-  // Hide navbar on login page
   const hideNavbar = location.pathname === "/";
 
   return (
