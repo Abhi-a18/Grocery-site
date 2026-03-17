@@ -18,7 +18,6 @@ function Home({ searchTerm }) {
   const [ratings, setRatings] = useState({});
   const [quantities, setQuantities] = useState({});
 
-  /* PAGINATION STATE */
   const [currentPage, setCurrentPage] = useState(1);
   const productsPerPage = 15;
 
@@ -167,9 +166,6 @@ function Home({ searchTerm }) {
 
   };
 
-
-  /* PAGINATION LOGIC */
-
   const indexOfLastProduct = currentPage * productsPerPage;
   const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
 
@@ -240,7 +236,8 @@ function Home({ searchTerm }) {
 
               <img src={item.thumbnail} alt={item.title} />
 
-              <h4>{item.title}</h4>
+             
+              <h4 className="text-black dark:text-white">{item.title}</h4>
 
               <p>₹{convertToINR(item.price)}</p>
 
@@ -253,7 +250,10 @@ function Home({ searchTerm }) {
 
                   <button onClick={() => decreaseQty(item.id)}>-</button>
 
-                  <span style={{ margin: "0 10px" }}>
+                  <span
+                    style={{ margin: "0 10px" }}
+                    className="text-black dark:text-white"
+                  >
                     {quantity}
                   </span>
 
@@ -282,9 +282,6 @@ function Home({ searchTerm }) {
         })}
 
       </div>
-
-
-      
 
       <div style={{ marginTop: "30px", display: "flex", justifyContent: "center", alignItems: "center"}}>
 

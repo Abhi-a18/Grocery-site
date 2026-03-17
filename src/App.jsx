@@ -1,8 +1,7 @@
-import React from "react";
-import Navbar from "./components/Navbar";
 import { Outlet, useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { useState } from "react";
+import Navbar from "./components/Navbar";
 
 function App() {
 
@@ -10,15 +9,17 @@ function App() {
   const user = useSelector((state) => state.auth.user);
 
   const [searchItem, setSearchItem] = useState("");
-  const hideNavbar = location.pathname === "/";
+
+  const hideNavbar =
+    location.pathname === "/" || location.pathname === "/signup";
 
   return (
     <>
       {!hideNavbar && user && (
         <Navbar onSearch={setSearchItem} />
       )}
-
-      <Outlet context={{ searchItem }} />
+      
+      <Outlet />
     </>
   );
 }

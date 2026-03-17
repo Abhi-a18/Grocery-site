@@ -25,7 +25,6 @@ const productSlice = createSlice({
       );
     },
 
-    // update product
     updateProduct: (state, action) => {
       const index = state.products.findIndex(
         (product) => product.id === action.payload.id
@@ -36,7 +35,6 @@ const productSlice = createSlice({
       }
     },
 
-    // clear all products
     clearProducts: (state) => {
       state.products = [];
     },

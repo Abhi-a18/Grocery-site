@@ -167,7 +167,7 @@ body {
   background: white;
   padding: 15px;
   border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.06);
+  box-shadow: 0 5px 15px rgba(230, 14, 21, 0.06);
   transition: 0.3s;
 }
 
@@ -249,7 +249,8 @@ h3 .txt{
 
 body.dark {
   background-color: #121212;
-  color: #ffffff;
+  color: #080505d0;
+  
 }
 
 body.dark .navbar {
